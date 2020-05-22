@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp
+spec:
+  replicas: 3
+  selector:
+    app: queque
+  template:
+    metadata:
+      name: queque
+      labels:
+        app: queque
+    spec:
+      containers:
+        - name: activemq
+          image: richardchesterwood/k8s-fleetman-queue:resources
+          ports:
+            - containerPort: 8161
