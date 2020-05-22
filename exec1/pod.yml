@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: activemq
+  labels:
+    name: active-queue
+spec:
+  containers:
+  - name:  active-queue
+    image: richardchesterwood/k8s-fleetman-queue:resources
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8161
