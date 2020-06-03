@@ -4,7 +4,7 @@ metadata:
   name:  active-queue-service
 spec:
   selector:
-    app:  queque
+    app:  active-queue
   ports:
   - port: 8161
     nodePort: 30012
